@@ -1,6 +1,4 @@
 
-
-
 export class Coordinate {
     x: number;
     y: number;
@@ -20,5 +18,15 @@ export class Coordinate {
     public equals(a: Coordinate, b: Coordinate) {
         if (a === b) return true;
         return a.x == b.x && a.y == b.y;
+    }
+
+    public distance(a: Coordinate, b: Coordinate) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    public magnitude(a: Coordinate) {
+        return Math.sqrt(a.x * a.x + a.y * a.y);
     }
 }
