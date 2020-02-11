@@ -4,6 +4,7 @@
   "main": "build/main.min.js",
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/plugin-external-helpers": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
@@ -11,11 +12,17 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-latest": "^6.24.1",
+    "husky": "^4.2.1",
     "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
     "rollup": "^1.29.1",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-typescript2": "^0.25.3",
     "ts-loader": "^6.2.1",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.5"
   },
   "scripts": {
@@ -27,10 +34,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "@babel/plugin-external-helpers": "^7.8.3",
-    "rollup-plugin-commonjs": "^10.1.0"
-  },
+  "dependencies": {},
   "jest": {
     "testRegex": "test/.*/.*\\.js?$",
     "moduleFileExtensions": [
@@ -42,5 +46,16 @@
       "/node_modules/",
       "/\\./"
     ]
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
