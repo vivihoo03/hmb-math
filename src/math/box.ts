@@ -1,6 +1,8 @@
 import { Coordinate } from './coordinate';
 
 
+
+
 export class Box {
     public top: number;
     public right: number;
