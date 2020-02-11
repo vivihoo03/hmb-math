@@ -49,8 +49,7 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "prettier --write",
-      "git add"
+      "tslint"
     ]
   },
   "husky": {
