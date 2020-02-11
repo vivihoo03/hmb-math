@@ -50,7 +50,9 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "eslint"
+      "eslint --fix",
+      "tslint --fix",
+      "git add"
     ]
   },
   "husky": {
