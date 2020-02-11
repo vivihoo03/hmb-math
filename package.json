@@ -49,7 +49,7 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "123"
+      "tslint --fix"
     ]
   },
   "husky": {
